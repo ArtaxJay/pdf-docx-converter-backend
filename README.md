@@ -1,4 +1,3 @@
-````markdown
 # **PDF ↔ DOCX Converter Backend**
 
 This is the backend service for the PDF ↔ DOCX converter application. It provides RESTful APIs to handle file uploads, determine file types (PDF or DOCX), and convert between these formats.
@@ -59,7 +58,7 @@ This backend server is built using **Express.js** and handles the following task
 Before running the project, make sure you have the following installed:
 
 - **Node.js** (v14+ recommended): [Download Node.js](https://nodejs.org/)
-- **npm** (Node Package Manager) - Comes with Node.js
+- **pnpm** (Performant Node Package Manager) - Comes with Node.js
 - **LibreOffice** (Required for file conversion): [Download LibreOffice](https://www.libreoffice.org/)
 
 ---
@@ -74,12 +73,11 @@ Follow these steps to set up the backend server:
    git clone https://github.com/yourusername/pdf-docx-converter-backend.git
    cd pdf-docx-converter-backend
    ```
-````
 
 2. **Install dependencies**:
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. **Set up environment variables**:
@@ -157,13 +155,13 @@ Here are the available endpoints for the backend:
 To start the server in development mode:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 To run the server in production:
 
 ```bash
-npm start
+pnpm start
 ```
 
 By default, the server will run on **http://localhost:5000**.
