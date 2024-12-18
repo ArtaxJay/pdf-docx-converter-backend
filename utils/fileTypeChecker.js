@@ -22,5 +22,3 @@ export async function detectFileType(filePath) {
     return null;
   }
 }
-
-// exports detectFileType;
