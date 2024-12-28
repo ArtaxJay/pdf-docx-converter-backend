@@ -1,24 +1,19 @@
-import { readFile } from 'fs/promises';
-import { fileTypeFromBuffer } from 'file-type';
+// utils/fileTypeChecker.js
 
+import fileType from 'file-type';
+import fs from 'fs/promises';
+
+/**
+ * Detect the MIME type of a file.
+ * @param {string} filePath - Path to the file to check.
+ * @returns {Promise<string>} - Returns the MIME type as a string.
+ */
 export async function detectFileType(filePath) {
-  try {
-    // Read the file into a buffer
-    const fileBuffer = await readFile(filePath);
-    const fileType = await fileTypeFromBuffer(fileBuffer);
+  const fileBuffer = await fs.readFile(filePath);
+  const type = await fileType.fromBuffer(fileBuffer);
 
-    // Supported types
-    const supportedTypes = [
-      'application/pdf',
-      'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    ];
-
-    if (fileType && supportedTypes.includes(fileType.mime)) {
-      return fileType.mime; // Return the MIME type (e.g., 'application/pdf')
-    }
-    return null; // Unsupported file type
-  } catch (error) {
-    console.error('Error detecting file type:', error);
-    return null;
+  if (!type) {
+    throw new Error('Unable to determine file type.');
   }
+  return type.mime;
 }

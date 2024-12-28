@@ -1,7 +1,7 @@
 {
   "name": "pdf-docx-converter-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Package to convert docx file to pdf, and pdf file to docx",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -9,16 +9,28 @@
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "Ola-Oluwajuwon",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "\"https://github.com/ArtaxJay/pdf-docx-converter-backend\""
+  },
+  "keywords": [
+    "docx",
+    "pdf",
+    "docxtopdf",
+    "pdftodocx"
+  ],
+  "author": "Ola-Oluwajuwon <kayodeoluwajuwon9@gmail.com> (https://github.com/Ola-Oluwajuwon)",
+  "license": "MIT",
   "dependencies": {
+    "@ilovepdf/ilovepdf-nodejs": "^0.3.0",
     "cors": "^2.8.5",
     "docx-pdf": "^0.0.1",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "file-type": "^19.6.0",
     "multer": "1.4.5-lts.1",
-    "pdf-lib": "^1.17.1"
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^1.1.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
